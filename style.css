@@ -59,6 +59,7 @@ h1 {
 
 .author p > span {
     font-weight: 700;
+    color: var(--clr-grayish-blue);
 }
 
 .card {
@@ -127,12 +128,14 @@ h1 {
 }
 
 .share-btn:hover,
-.share-btn:focus {
+.share-btn:focus,
+.share-btn:active {
     background-color: var(--clr-dark-blue);
 }
 
 .share-btn:hover svg path,
-.share-btn:focus svg path {
+.share-btn:focus svg path,
+.share-btn:active svg path {
     fill: #fff;
 }
 
