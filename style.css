@@ -57,7 +57,11 @@ h1 {
     letter-spacing: var(--ls-heading);
 }
 
-.author p > span {
+.author > p {
+    color: var(--clr-blue);
+}
+
+.author > p > span {
     font-weight: 700;
     color: var(--clr-grayish-blue);
 }
