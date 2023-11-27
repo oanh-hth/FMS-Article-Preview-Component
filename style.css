@@ -155,7 +155,7 @@ li:not(:first-child) {
     cursor: pointer;
 }
 
-@media screen and (min-width: 34.375rem) {
+@media screen and (min-width: 36.25rem) {
     :root {
         --fs-heading: 1.25rem;
         --lh-heading: 1.75rem;
@@ -176,6 +176,7 @@ li:not(:first-child) {
         border-top-left-radius: 0.625rem;
         border-bottom-left-radius: 0.625rem;
         overflow: hidden;
+        width: 17.5rem;
     }
 
     .card__body {
