@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+:root {
+    --clr-grayish-blue: hsl(217, 19%, 35%);
+    --clr-dark-blue:hsl(214, 17%, 51%);
+    --clr-blue: hsl(212, 23%, 69%);
+    --clr-light-blue:hsl(210, 46%, 95%);
+
+    --fs-body: 0.8125rem;
+    --fs-heading: 1rem;
+
+    --lh-heading: 1.5rem;
+    --ls-heading: 0.0125rem;
+
+}
+
+*, *::before, *::after {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: var(--clr-light-blue);
+    font-family: 'Manrope', sans-serif;
+    font-size: var(--fs-body);
+    font-weight: 500;
+    color: var(--clr-dark-blue);
+    line-height: 1.25rem;
+    letter-spacing: 0.00763rem;
+}
+
+h1 {
+    font-size: var(--fs-heading);
+    font-weight: 700;
+    color: var(--clr-grayish-blue);
+    line-height: var(--lh-heading);
+    letter-spacing: var(--ls-heading);
+}
+
+.author p > span {
+    font-weight: 700;
+}
+
+.card {
+    width: min(45.625rem, 100vw - 3rem);
+    background-color: #fff;
+    overflow: hidden;
+    border-radius: 0.625rem;
+    display: grid;
+    box-shadow: 0px 40px 40px -10px rgba(201, 213, 225, 0.50);
+}
+
+.card__header {
+    height: 12.5rem;
+}
+
+.card__header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+}
+
+.card__body {
+    padding: 2.25rem 2rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.card__footer {
+    padding-inline: 2rem;
+    padding-block: 0.75rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__footer.active {
+    background-color: var(--clr-grayish-blue);
+}
+
+.author {
+    display: flex;
+    align-items: center;
+}
+
+.card__footer.active .author {
+    display: none;
+}
+
+.author img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.share-btn {
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--clr-light-blue);
+    border-radius: 50%;
+}
+
+.share-btn:hover,
+.share-btn:focus {
+    background-color: var(--clr-dark-blue);
+}
+
+.share-btn:hover svg path,
+.share-btn:focus svg path {
+    fill: #fff;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: none;
+    align-items: center;
+    gap: 1.31rem;
+    color: var(--clr-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.3125rem;
+}
+
+.card__footer.active ul {
+    display: flex;
+}
+ 
+li:not(:first-child) {
+    cursor: pointer;
+}
+
+@media screen and (min-width: 34.375rem) {
+    :root {
+        --fs-heading: 1.25rem;
+        --lh-heading: 1.75rem;
+        --ls-heading: 0.01563rem;
+    }
+
+    .card {
+        display: grid;
+        grid-template-areas:
+        "header body"
+        "header footer";
+        overflow: unset;
+    }
+
+    .card__header {
+        grid-area: header;
+        height: auto;
+        border-top-left-radius: 0.625rem;
+        border-bottom-left-radius: 0.625rem;
+        overflow: hidden;
+    }
+
+    .card__body {
+        grid-area: body;
+        padding: 2rem 2.5rem 0;
+    }
+
+    .card__footer {
+        grid-area: footer;
+        padding: 1.25rem 2.5rem 2rem;
+        position: relative;
+    }
+
+    .card__footer.active {
+        background-color: transparent;
+    }
+
+    .card__footer.active .author {
+        display: flex;
+    }
+
+    .card__footer.active ul {
+        background-color: var(--clr-grayish-blue);
+        padding: 1.13rem 2.31rem;
+        position: absolute;
+        right: -4.25rem;
+        bottom: 100%;
+        filter: drop-shadow(0px 10px 10px rgba(201, 213, 225, 0.50));
+        border-radius: 0.625rem;
+    }
+
+    .card__footer.active ul::before {
+        content: '';
+        border: 10px;
+        height: 1rem;
+        width: 1rem;
+        background-color: var(--clr-grayish-blue);
+        position: absolute;
+        left: 50%;
+        bottom: -0.5rem;
+        transform: rotate(45deg);
+    }
+}
+
+
+
+
+
+
+
+
